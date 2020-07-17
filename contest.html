@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Wheel of Force</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -17,7 +19,7 @@
             <div class="row">
                 <div class="col-sm contest-header">
                     <div class="contest-logo">
-                        <img src="./assets/img/logo_dark.svg" alt="while of force">
+                        <img src="./assets/img/logo_dark.png" alt="while of force">
                     </div>
                     <div id="infoPannel" class="contest-infoPannel isWheel">
                         <div class="headerContest">
@@ -46,7 +48,7 @@
                         </div>
                     </div>
                     <div class="contest-btnCancel">
-                        <button type="button" class="btn btn-lg">
+                        <button id="leaveGameBtn" type="button" class="btn btn-lg">
                             <span class="icon-closeBtn"></span> Leave game
                         </button>
                     </div>
@@ -83,67 +85,71 @@
             </div>
             <div id="bgWheel" class="bg_wheel"></div>
         </section>
-        <section id="pannelSection" class="pannelSection">
-            <h1>People</h1>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <div id="pannel" class="pannel"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="msgPannel" class="msgPanel">
-                <div>Esto es un mensaje</div>
-            </div>
-        </section>
-        <div class="contestContent_footer">
-            <section id="contestUserPannel" class="contest-userPannel">
-                <div class="contest-userPannel_avatar">
-                    <div class="mask">
-                        <img src="./assets/img/avatars/human-00.jpg" alt="avatar">
-                    </div>
-                </div>
-                <div class="contest-userPannel_info">
-                    <h2 class="contest-userPannel_info_name">Ferran</h2>
-                    <div class="contest-userPannel_info_points">
-                        <span class="contest-userPannel_info_points_title">Points</span>
-                        <div class="contest-userPannel_info_points_number">
-                            <span class="icon-logo-alliance"></span>
-                            <span id="contestPoints">0</span>
+        <div class="game">
+            <section id="pannelSection" class="pannelSection">
+                <h1>People</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div id="pannel" class="pannel"></div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section id="pannelAction" class="contest-actionsPannel">
-                <div class="actionsPannel_btnSolve">
-                    <button id="solveBtn" type="button">Solve Pannel</button>
+    
+                <div id="msgPannel" class="msgPanel">
+                    <div>Esto es un mensaje</div>
                 </div>
-                <div class="actionsPannel_pushLetter">
-                    <h3>Letter / Number</h3>
-                    <div class="input-group">
-                        <input type="text" class="form-control" maxlength="1" id="pushLetterInput" value="" />
-                        <div class="input-group-append">
-                            <button type="button" class="input-group-text" id="pushLetterBtn">
-                                <span class="icon-arrow-up"></span>
-                            </button>
+            </section>
+            <div class="contestContent_footer">
+                <section id="contestUserPannel" class="contest-userPannel">
+                    <div class="contest-userPannel_avatar">
+                        <div class="mask">
+                            <img src="./assets/img/avatars/human-00.jpg" alt="avatar">
                         </div>
                     </div>
-                </div>
-                <div class="actionsPannel_vocals">
-                    <h3>BUY VOCALS: <span id="vocalValue"></span> pts</h3>
-                </div>
-            </section>
+                    <div class="contest-userPannel_info">
+                        <h2 class="contest-userPannel_info_name">Ferran</h2>
+                        <div class="contest-userPannel_info_points">
+                            <span class="contest-userPannel_info_points_title">Points</span>
+                            <div class="contest-userPannel_info_points_number">
+                                <span class="icon-logo-alliance"></span>
+                                <span id="contestPoints">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actionsPannel_btnSolve">
+                        <button id="solveBtn" type="button">Solve Pannel</button>
+                    </div>
+                </section>
+                <section id="pannelAction" class="contest-actionsPannel">
+                    
+                    <div class="actionsPannel_pushLetter">
+                        <h3>Letter / Number</h3>
+                        <div class="input-group">
+                            <input type="text" class="form-control" maxlength="1" id="pushLetterInput" value="" />
+                            <div class="input-group-append">
+                                <button type="button" class="input-group-text" id="pushLetterBtn">
+                                    <span class="icon-arrow-up"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actionsPannel_vocals">
+                        <h3>BUY VOCALS: <span id="vocalValue"></span> pts</h3>
+                    </div>
+                </section>
+            </div>
         </div>
+
     </main>
 
-    <section id="orientationMsg" class="orientationMsg d-none">
+    <!--<section id="orientationMsg" class="orientationMsg d-none">
         <div class="orientationMsg_content">
             <span class="icon-turn"></span>
             <p class="h1">To play you must turn the mobile</p>
             <button id="playOrientationBtn" type="button" class="btn btn-lg btn-primary mt-3">Turn it!</button>
         </div>
-    </section>
+    </section>-->
 
     <div id="solveModal" class="modal solveModal" tabindex="-1" role="dialog">
         <div class="modal-dialog">
@@ -154,7 +160,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" >
                     <div id="solveModal_form" class="solveModal_form"></div>
                 </div>
                 <div class="modal-footer">
@@ -165,9 +171,9 @@
         </div>
     </div>
 
-    <div id="modalSuccessGame" class="modal" tabindex="-1" role="dialog"></div>
+    <div id="modalSuccessGame" class="modal resultModal" tabindex="-1" role="dialog"></div>
 
-    <div id="modalFailGame" class="modal" tabindex="-1" role="dialog"></div>
+    <div id="modalFailGame" class="modal resultModal" tabindex="-1" role="dialog"></div>
 
     <!-- Jquery js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

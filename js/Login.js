@@ -55,7 +55,7 @@ class Login{
             parent.removeChild(oldLogin);
         }
 
-        // activamos la sesión
+        //  activamos la sesión
         db.activeSession(matchUser)
         db.showUserPannel();
 

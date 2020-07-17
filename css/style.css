@@ -725,8 +725,8 @@ h1{
     background-image: url('../assets/img/bg_heroSection.jpg');
     background-position: center;
     background-size: cover;
-    padding: 80px 10px;
-    min-height: calc(105vh - 56px);
+    padding: 80px 10px 126px;
+    min-height: calc(110vh - 56px);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -2173,6 +2173,17 @@ form .btn:disabled{
 
     .contestContent_footer{
         padding: 0 0 30px;
+    }
+
+    .heroSection {
+        padding: 94px 50px 107px;
+    }
+}
+
+@media (max-width: 700px) and (min-width: 501px){
+    .heroSection{
+        height: calc(185vh - 56px);
+        padding-top: 40px;
     }
 }
 

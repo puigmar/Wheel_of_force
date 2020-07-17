@@ -44,7 +44,6 @@ El **MVP** cubre lo siguiente:
   - faq.html
   - register.html
   - signin.html
-  - post.html
   - css/
     - style.css
   - js/

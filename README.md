@@ -49,12 +49,15 @@ El **MVP** cubre lo siguiente:
     - style.css
   - js/
     - main.js
-    - post.js
+    - Databajse.js
+    - Game.js
     - Contest.js
     - Signup.js
     - User.js
     - Validator.js
-    - SwapiApi.js
+    - Login.js
+    - Warsiepedia.js
+    - WhinWheel.js
   - assets/
     - img/
     - fonts/

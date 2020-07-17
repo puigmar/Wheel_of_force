@@ -2127,9 +2127,20 @@ form .btn:disabled{
     }
 }
 
-@media (max-width: 576px){
+@media (max-width: 700px){
     .wrapperCards .warsieCard{
         width: 100%;
+    }
+}
+
+@media (max-width: 700px) and (min-width: 500px){
+    .navbar-collapse.offcanvas-collapse{
+        background-size: 192%;
+        background-repeat: no-repeat;
+        background-position: 0 0vw;
+    }
+    .navbar-collapse.offcanvas-collapse.open{
+        left: 60vw
     }
 }
 

@@ -33,6 +33,7 @@ El **MVP** cubre lo siguiente:
 
 - Añadir sockets para puedan concursar dos usuarios a la vez.
 - Añadir Ranking global
+- Añadir avtares 
 
 
 
@@ -43,8 +44,10 @@ El **MVP** cubre lo siguiente:
   - contest.html
   - faq.html
   - register.html
-  - signin.html
+  - login.html
   - post.html
+  - register.html
+  - warsiepedia.html
   - css/
     - style.css
   - js/
@@ -72,7 +75,7 @@ El **MVP** cubre lo siguiente:
 
 ### Git
 
-[Gihub Repo URL](https://github.com/puigmar/WheelOfForce)
+[Gihub Repo URL](https://puigmar.github.io/Wheel_of_force/)
 
 ### SWAPI API de Star Wars
 

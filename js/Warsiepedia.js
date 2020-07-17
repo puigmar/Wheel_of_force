@@ -3,6 +3,7 @@ class Warsiepedia {
         this.selectCategoriesDom = document.getElementById(selectorId);
         this.wrapperCards = document.getElementById('selectorresult');
         this.wrapperContent = document.querySelector('.wrapperCards');
+        this.warsiepediaMain = document.querySelector('.bg_warsiepedia');
         this.categories = []
     }
 
@@ -28,7 +29,7 @@ class Warsiepedia {
 
         let categoryResult = [];
 
-        // Cargamos selector de la categoria
+        //  Cargamos selector de la categoria
         const query = await fetch(`https://swapi.py4e.com/api/${catValue}/`);
         const json = await query.json();
         categoryResult.push(...json.results);
@@ -45,7 +46,7 @@ class Warsiepedia {
 
         return categoryResult;
 
-    }
+    } 
 
     selectElement = async (e) => {    
         const loadCategories = await this.loadCategorySelection(e.target.value)
@@ -65,7 +66,7 @@ class Warsiepedia {
 
         const category = catArr;
         const parent = this.wrapperCards;
-        this.wrapperContent.setAttribute(`style`, `background-image: url(${bg_cats[catName]});`);
+        this.warsiepediaMain.setAttribute(`style`, `background-image: url(${bg_cats[catName]});`);
         console.log(bg_cats[catName]);
         
         category.forEach(card => {

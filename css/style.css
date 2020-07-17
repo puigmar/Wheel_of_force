@@ -9,6 +9,8 @@ body{
 header{
     height: 56px;
     background-color: black;
+    z-index: 2;
+    position: relative;
 }
 
 h1{
@@ -395,6 +397,10 @@ h1{
     height: 100%;
 }
 
+.nav-tools-group .navbar-toggler:focus{
+    outline: 0;
+}
+
 /*****************************
 + Navbar
 ****/
@@ -505,6 +511,22 @@ h1{
 
 .nav-tools-group .nav-user .dropdown-menu .dropdown-item{
     white-space: normal;
+}
+
+.nav-tools-group .nav-user .dropdown-menu .dropdown-item{
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+    padding: 8px 15px;
+}
+
+.dropdown-item.points-item{
+    padding: 10px;
+    background-color: #155724;
+    color:#fff;
+}
+
+.nav-tools-group .nav-user > a{
+    text-decoration: none;
 }
 
 /*************************************************
@@ -639,6 +661,17 @@ h1{
     display: flex;
     flex-flow: column;
     overflow: hidden;
+    background-size: cover;
+}
+
+.contestContent:before{
+    content: "";
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(6deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6292892156862745) 0%, rgba(0,0,0,0) 60%)
 }
 
     .contestContent .bg_wheel{
@@ -667,7 +700,7 @@ h1{
     BOTONES
 *******************************/
 
-button.btn[class*="btn-"]{
+.btn[class*="btn-"]{
     border-radius: 8px;
 }
 
@@ -692,8 +725,8 @@ button.btn[class*="btn-"]{
     background-image: url('../assets/img/bg_heroSection.jpg');
     background-position: center;
     background-size: cover;
-    padding: 50px;
-    min-height: calc(90vh - 56px);
+    padding: 80px 10px;
+    min-height: calc(105vh - 56px);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -731,8 +764,8 @@ button.btn[class*="btn-"]{
 }
 
 .heroSection_content figure{
-    max-width: 385px;
-    margin: 0 auto 60px;
+    max-width: 248px;
+    margin: 11px auto 25px;
     transform: rotate(-8deg);
     animation-name: mockupAnimation;
     animation-duration: 4s;
@@ -753,24 +786,31 @@ button.btn[class*="btn-"]{
     max-height: 100%;
 }
 
-.heroSection .display-4 {
+.heroSection_content_title{
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
-    margin-bottom:5px;
+    line-height: 1.2;
+    font-size: 3rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.62);
+    margin: 15px 0 15px
 }
 
-.heroSection .h2{
+.heroSection_content_text{
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.8rem;
     color: #fff;
-    line-height: 1.4;
-    font-size: 2rem;
+    line-height: 1.5;
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.62);
-    margin: 0;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
+
 
 .heroSection .btn.btn-lg{
-    margin: 0 10px;
+    width: 92%;
+    margin-bottom: 15px;
+    margin: 10px 0;
     min-width: 200px;
     height: 56px;
     font-size: 2rem;
@@ -780,6 +820,27 @@ button.btn[class*="btn-"]{
     border-radius: 5px;
 }
 
+.bg_warsiepedia{
+    position: fixed;
+    height: 70vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+}
+
+    .bg_warsiepedia:before{
+        content:"";
+        height: 35vh;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6026785714285714) 24%, rgba(255,255,255,1) 66%);
+    }
 
 .warsiepediaSection{
     display: flex;
@@ -825,6 +886,15 @@ button.btn[class*="btn-"]{
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
+.warsiepediaSection_card_image a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 [class*="card_image--"]{
     background-repeat: no-repeat;
     background-position: center;
@@ -841,6 +911,26 @@ button.btn[class*="btn-"]{
 
 .card_image--planets{
     background-image: url('../assets/img/bg_planets.jpg');
+}
+
+.loading{
+    position: relative;
+}
+
+.loading:before{
+    width: 100%;
+    height: 100%;
+    content: "Loading content...";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.8);
+    opacity: 1;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 .warsiepediaSection_categories .warsiepediaSection_card{
@@ -870,11 +960,12 @@ button.btn[class*="btn-"]{
 *******************************/
 
 .searchWarsieSection{
-    background-color: #32C5FF;
+    z-index: 1;
+    position: relative;
 }
 
 .searchWarsieSection .warsepediaTitle{
-    font-size: 5.6rem;
+    font-size: 4rem;
     text-align: center;
 }
 
@@ -904,9 +995,11 @@ button.btn[class*="btn-"]{
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 20px;
-    min-height: 100vh;
+    max-height: 400px;
     background-size: cover;
     padding-bottom: 50px;
+    z-index: 1;
+    position: relative;
 }
 
     .wrapperCards > .container{
@@ -1050,6 +1143,8 @@ button.btn[class*="btn-"]{
             margin: 4px 4px;
             text-transform: uppercase;
             border-radius: 3px;
+            box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.6)
+
         }
 
         .pannel_cell.space{
@@ -1057,9 +1152,13 @@ button.btn[class*="btn-"]{
             background-size: 50%;
         }
 
+
+
 .msgPanel{
     opacity: 0;
     transition: all 0.3s ease-in-out;
+    justify-content: center;
+    display: flex;
 }
 
 .msgPanel div{
@@ -1067,7 +1166,7 @@ button.btn[class*="btn-"]{
     padding: 13px 40px;
     font-size: 1.8rem;
     border: 1px solid #F75632;
-    background-color: black;
+    background-color: white;
     color: #F75632;
 }
 
@@ -1090,6 +1189,11 @@ button.btn[class*="btn-"]{
         display: flex;
         align-items: center;
         flex-basis: 35%;
+        justify-content: space-around;
+    }
+
+    .contest-userPannel-profile{
+        display: flex;
     }
 
         .contest-userPannel_avatar{
@@ -1194,6 +1298,7 @@ button.btn[class*="btn-"]{
             padding: 10px;
             width: 94px;
             height: 94px;
+            margin-left: 20px;
         }
 
             .actionsPannel_btnSolve:before{
@@ -1373,7 +1478,7 @@ button.btn[class*="btn-"]{
 
     .wheelSection_wheel {
         position: relative;
-        width: 280px;
+        width: 50%;
         display: flex;
         align-items: center;
     }
@@ -1423,6 +1528,7 @@ button.btn[class*="btn-"]{
         margin-left: 30px;
         display: flex;
         align-items: center;
+        width: 50%;
     }
 
     .wheelSection_actions_text{
@@ -1470,6 +1576,7 @@ button.btn[class*="btn-"]{
 
     .wheelSection_wheel #canvas{
         position: relative;
+        width: 100%;
     }
 
 
@@ -1645,6 +1752,11 @@ form .btn:disabled{
     }
 
 
+.resultModal .btn{
+    width: 90%;
+    border-radius: 5px;
+}
+
 /*************************+
 
     Media-query
@@ -1681,10 +1793,24 @@ form .btn:disabled{
         margin-bottom: 40px;
     }
 
+    .heroSection {
+        min-height: calc(69vh - 56px);
+    }
+
+    .heroSection_content figure {
+        max-width: 328px;
+        margin: 0 auto 25px;
+        transform: rotate(-8deg) translateY(-30px);
+        animation-name: mockupAnimation;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        position: relative;
+    }
+
 }
 
 @media (min-width: 992px){
-
 
     .generic-layout .generic-logo{
         width: 250px;
@@ -1704,8 +1830,9 @@ form .btn:disabled{
 
     .navbar-dark .navbar-nav .nav-link{
         color: #FFF;
-        font-size: 1.6rem;
-        padding: 0 20px;
+        font-size: 1.5rem;
+        padding: 0px 13px;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .nav-user-icon{
@@ -1715,13 +1842,7 @@ form .btn:disabled{
     .nav-user-name{
         padding-left: 20px;
         border-left: 1px solid rgba(255,255,255,0.4);
-        margin-left: 35px;
-    }
-
-    .dropdown-item.points-item{
-        padding: 10px;
-        background-color: #155724;
-        color:#fff;
+        margin-left: 20px;
     }
 
 
@@ -1733,6 +1854,7 @@ form .btn:disabled{
 
     .contestContent h1{
         font-size: 4.4rem;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.62);
     }
 
     .contest-layout header{
@@ -1794,7 +1916,17 @@ form .btn:disabled{
         font-size: 3.5rem;
     }
 
-    /* panel */
+    /* home */
+
+    .heroSection{
+        padding: 50px;
+        min-height: calc(76vh - 56px);
+    }
+
+    .heroSection_content figure {
+        max-width: 385px;
+        margin: 37px auto 21px;
+    }
 
     .pannel_cell{
         width: 60px;
@@ -1962,6 +2094,43 @@ form .btn:disabled{
         margin-top: 5px;
     }
 
+    .bg_warsiepedia{
+        height: 60vh;
+    }
+    
+        .bg_warsiepedia:before{
+            height: 30vh;
+        }
+
+    .wrapperCards .warsieCard{
+        width: 40%;
+    }
+
+    .contestContent .bg_wheel{
+        background-size: contain;
+    }
+}
+
+@media (min-width: 768px){
+    .heroSection_actions {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .heroSection .btn.btn-lg{
+        max-width: 265px;
+    }
+
+    .heroSection .btn.btn-lg:last-child{
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 576px){
+    .wrapperCards .warsieCard{
+        width: 100%;
+    }
 }
 
 @media (max-width: 991px) and (min-width: 767px){
@@ -1980,8 +2149,144 @@ form .btn:disabled{
     .contest-layout header > .container{
         max-width: none;
     }
+}
 
-    .contestContent .bg_wheel{
-        background-size: contain;
+@media (max-width: 1024px) and (min-width: 768px){
+    .actionsPannel_vocals{
+        margin-right: -29px;
+    }
+
+    .contest-actionsPannel {
+        margin-left: 44px;
+    }
+
+    .contestContent_footer{
+        padding: 0 0 30px;
+    }
+}
+
+@media (max-width: 500px) and (min-width: 320px){
+
+    .contestContent{
+        padding-top: 59px;
+    }
+
+    .contest-header .contest-infoPannel {
+        height: 40px;
+        width: 300px;
+        background-color: #38C6F4;
+        padding: 15px;
+        position: absolute;
+        top: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+    }
+
+    .contest-header .contest-infoPannel:before, .contest-header .contest-infoPannel:after{
+        border-top: 41px solid #38C6F4;
+    }
+
+    .wheelSection_content{
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 56px;
+    }
+
+    .wheelSection_wheel{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .wheelSection_wheel #canvas{
+        width: 100%
+    }
+
+    .wheelSection_actions{
+        margin: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .wheelSection_actions .wheelSection_actions_content{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .contestContent_footer{
+        flex-flow: column;
+        height: auto;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding: 20px;
+    }
+    .contestContent_footer > * {
+        align-self: flex-end;
+        width: 100%;
+    }
+
+    .contest-actionsPannel{
+        margin: 0;
+        align-items: unset;
+        flex-basis: 100%;
+    }
+    .actionsPannel_pushLetter{
+        margin: 0;
+    }
+
+    .msgPanel div{
+        margin: 18px 0 20px;
+        padding: 10px;
+        font-size: 1.5rem;
+    }
+
+    .contest-userPannel{
+        margin-bottom: 30px;
+    }
+
+    .actionsPannel_pushLetter > .input-group {
+        height: 67px;
+    }
+
+    .actionsPannel_vocals ul{
+        margin-right: 0;
+    }
+
+    .actionsPannel_vocals ul button{
+        width: 30px;
+        height: 30px;
+    }
+
+    .pannel_cell{
+        width: 35px;
+        height: 35px;
+    }
+
+    .wheelSection_actions{
+        width: 100%;
+    }
+
+    .contestContent .bg_wheel {
+        background-size: cover;
+    }
+
+    .actionsPannel_vocals {
+        margin-left: 20%;
+        height: 106px;
+    }
+
+    .searchWarsieSection{
+        margin-bottom: -20px;
+        padding-bottom: 0!important;
+    }
+
+    .wrapperCards{
+        max-height: none;
     }
 }

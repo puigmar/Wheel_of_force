@@ -80,7 +80,7 @@ class Database {
         const user = this.getSesion();
         
         if(!user){
-            goTo('index');
+            goTo('login');
         }
     }
 
@@ -91,19 +91,19 @@ class Database {
             const parent = document.querySelector('header .nav-tools-group');
             const userPannel = document.createElement('div');
             userPannel.classList.add('dropdown','nav-user');
-            //parent.removeChild(userPannel)
+            // parent.removeChild(userPannel)
     
             userPannel.innerHTML = 
                 `<div class="dropdown nav-user">
                     <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="nav-user-name">Hola ${user.name}</span>
+                        <span class="nav-user-name">Hi ${user.name}</span>
                         <span class="icon-user nav-user-icon"></span>
                     </a>
                    
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <p class="dropdown-item points-item">You have ${user.points} points</p>
                         <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Play to Wheel of Force!</a>
+                        <a class="dropdown-item" href="./contest.html">Wheel of Force!</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>

@@ -50,6 +50,7 @@ class Game {
   
     addPoints = (num) => {
       this.user.points += num;
+      contest.pointsEarned.push(num)
       this.UpdatePoints(this.user.points)
     }
   
@@ -60,6 +61,7 @@ class Game {
       if (this.user.points < 0) {
         this.user.points = 0
       }
+      contest.pointsEarned.push(-num)
       this.UpdatePoints(this.user.points)
     }
 
@@ -273,10 +275,10 @@ class Game {
         if(!this.vocals.includes(letter)){
 
           //Calculamos los puntos ganados
-          const pointsEarned = this.calculatePoints(correctLetters)
+          const currentPointsEarned = this.calculatePoints(correctLetters)
 
           // Los sumamos al panel del usuario
-          this.addPoints(pointsEarned)
+          this.addPoints(currentPointsEarned)
 
         }
 
@@ -339,7 +341,6 @@ class Game {
       return numLetters * this.letterValue;
     }
 
-
     // Chequeamos si el juego se ha terminado
     checkResultGame = () => {
       let correctAnswer = this.correctAnswer.toLowerCase().split(' ').join('');
@@ -398,7 +399,7 @@ class Game {
           `
         } else {
           divForm.innerHTML += `
-            <input type="text" class="form-control" id="${letter.cellId}" value="${letter.value}">
+            <input type="text" maxlength="1" class="form-control" id="${letter.cellId}" value="${letter.value}">
           `
         }
         
@@ -475,8 +476,8 @@ class Game {
                       <p class="text-success">Your current points are ${this.user.points}</p>
                   </div>
                   <div class="modal-footer">
-                      <button id="leaveGameBtn" type="button" class="btn btn-secondary btn-md">Leave the game</button>
-                      <button type="button" id="nextRoundBtn" class="btn btn-primary btn-md">Go to the Round ${contest.currentRound+1}!</a>
+                      <a id="leaveGameBtn" href="./index.html" class="btn btn-secondary btn-md">Leave the game</a>
+                      <button type="button" id="nextRoundBtn" class="btn btn-primary btn-md">Go to the Round ${contest.currentRound+1}!</button>
                   </div>
               </div>
           </div>
@@ -505,7 +506,7 @@ class Game {
                   <p class="text-success">Your current points are ${this.user.points}</p>
               </div>
               <div class="modal-footer">
-                  <button id="starNewGameBtn" type="button" class="btn btn-secondary btn-md">Start a New Game</button>
+                  <a href="./index.html" id="starNewGameBtn" type="button" class="btn btn-secondary btn-md">Start a New Game</a>
               </div>
           </div>
           </div>

@@ -8,25 +8,52 @@ class Contest {
         this.user = db.getSesion();
         this.topic = '';
         this.pannelObj = {}
+        this.pointsEarned = []
         
+        // botón capa aviso orientación landscape
         this.orintationBtn = document.getElementById('playOrientationBtn')
+
+        // botón play tras finalizar selección tema en la ruleta
         this.wheelPlayButton = document.getElementById('wheelBtnPlay');
 
+        // Nombre del concursante en el panel de jugador
         this.contestUserName = document.getElementById('contestUserName');
+
+        // Nombre del tema en el panel del juego
         this.contestTopicName = document.getElementById('contestTopicName');
+
+        // Capa mensaje introducción a la ruleta
         this.introWheelContent = document.getElementById('wheelSection_actionsIntro');
+
+        // Capa mensaje finalización ruleta
         this.resultWheelContent = document.getElementById('wheelSection_actionsResult');
+
+        // span donde aparee el numero de ronda en el que estamos
         this.roundNumber = document.querySelector('.wheelSection_actions_title span');
+
+        // contenedor en el header donde aparece el round en el que estamos
         this.headerRoundNumber = document.getElementById('roundHeaderContest');
+
+        // fondo para juego
         this.bgWheel = document.getElementById('bgWheel');
+
+        // fondo para ruleta
         this.bgContest = document.querySelector('contestContent');
 
+        // elemento central del header del juego
         this.pannelHeader = document.getElementById('infoPannel');
+
+        // contenedor html de la ruleta
         this.whellWrapperSecion = document.getElementById('WheelWrapper');
-        
+
+        // Asignamos valor del round a este contenedor html
         this.headerRoundNumber.innerHTML = this.currentRound;
 
-        this.orientationMsg = document.getElementById('orientationMsg');
+        // Botón con el mensaje de orientación
+        // this.orientationMsg = document.getElementById('orientationMsg');
+
+        //  Btn para salir del juego
+        this.leaveGameButton = document.getElementById('leaveGameBtn')
     }
 
     checkContest(){
@@ -34,6 +61,25 @@ class Contest {
             alert('Concurso acabado!');
         }
     }
+
+    getPointsEarned(array) {
+        if(array.length === 0){
+            return 0
+        }
+        return array.reduce((acc, num) => acc + num);
+    }
+
+    leaveGame = () => {
+        const totalPoints = this.getPointsEarned(this.pointsEarned)
+        console.log(totalPoints)
+        const question = confirm(`Are you sure you want to quit the game? You can loss ${totalPoints} points!`)
+        
+        if(question){
+            goTo('index')
+        }
+    }
+
+    
 
     bgWheelRandom(){
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
@@ -60,7 +106,7 @@ class Contest {
             }
             this.segments.push(
                 {
-                    'fillStyle': this.colorWheel, 'text': segment, 'textFontFamily': 'Monda', 'textFontSize': '14'
+                    'fillStyle': this.colorWheel, 'text': segment, 'textFontFamily': 'Monda', 'textFontSize': '24'
                 }
             )
         })
@@ -93,7 +139,7 @@ class Contest {
         })
     }
 
-    checkViewport(){
+    /*checkViewport(){
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
@@ -115,7 +161,6 @@ class Contest {
 
         if(vw < 1000){
             this.orintationBtn.innerHTML = 'Turn it!'
-            this.orintationBtn.disabled = true;
         } else {
             this.orintationBtn.innerHTML = `Ok let's play!`
         }
@@ -125,13 +170,7 @@ class Contest {
         const el = this.orientationMsg;
         el.style.opacity = 0;
         setTimeout(() =>{ el.style.display = 'none' }, 100);
-
-    }
-
-    async addListeners() {
-        this.orintationBtn.addEventListener('click', this.hideOrientationMsg)
-        this.wheelPlayButton.addEventListener('click', this.prepareGame)
-    }
+    }*/
 
     async handleCategory(category){
         this.topic = category;
@@ -223,6 +262,12 @@ class Contest {
         await this.addListeners()    
     }
 
+    addListeners() {
+        //this.orintationBtn.addEventListener('click', this.hideOrientationMsg)
+        this.wheelPlayButton.addEventListener('click', this.prepareGame)
+        this.leaveGameButton.addEventListener('click', this.leaveGame)
+    }
+
     initGame(category, user){
         const game = new Game(category, user);
         game.initGame();
@@ -237,10 +282,10 @@ db.checkSession()
 // Inicializamos concurso
 const contest = new Contest(6);
 window.addEventListener('load', contest.initContest())
-window.addEventListener('onorientationchange', contest.checkViewport())
-window.addEventListener('resize', contest.checkViewport())
+//window.addEventListener('onorientationchange', contest.checkViewport())
+//window.addEventListener('resize', contest.checkViewport())
 contest.bgWheelRandom()
-contest.checkViewport()
+//contest.checkViewport()
 
 // WHEEL 
 // No se como instancarla dentro del método create Wheel :/

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>time</title>
+    <g id="time" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M73.7456821,4.26325641e-14 L80,6.25431795 L46.254,40 L80,73.7456821 L73.7456821,80 L71.437,77.692 L74.7826087,74.3478261 L40,40 L5.2173913,74.3478261 L8.562,77.692 L6.25431795,80 L3.12638804e-12,73.7456821 L33.745,40 L3.16191517e-12,6.25431795 L6.25431795,5.40012479e-13 L8.562,2.308 L5.2173913,5.65217391 L40,40 L74.7826087,5.65217391 L71.437,2.307 L73.7456821,4.26325641e-14 Z" id="Combined-Shape" fill="#FFD101"></path>
+        <polygon id="Path-14" fill="#FFFFFF" points="5.2173913 5.65217391 10.8695652 3.55271368e-15 69.1304348 3.55271368e-15 74.7826087 5.65217391 40 40"></polygon>
+        <polygon id="Path-14" fill="#FFFFFF" transform="translate(40.000000, 60.000000) rotate(-180.000000) translate(-40.000000, -60.000000) " points="5.2173913 45.6521739 10.8695652 40 69.1304348 40 74.7826087 45.6521739 40 80"></polygon>
+    </g>
+</svg>

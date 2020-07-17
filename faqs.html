@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="generic-layout">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="generic-logo">
+                            <img src="./assets/img/logo_light.svg" alt="while of force">
+                        </div>
+                        <div class="nav-tools-group">
+                            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                
+                            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                                <button class="navbar-toggler p-0 border-0 offcanvas-collapse_btnClose" type="button" data-toggle="offcanvas">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./register.html">Register</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./warsiepedia.html">Warsiepedia</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./faqs.html">FAQS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row justify-content-md-center mt-5">
+                <div class="col-md-8 col-lg-12">
+                    <div class="panel-group" id="accordion">
+                        <h1 class="faqTitle">General questions</h1>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false">Is account registration required?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                    Account registration at <strong>PrepBootstrap</strong> is only required if you will be selling or buying themes. 
+                                    This ensures a valid communication channel for all parties involved in any transactions. 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false">Can I submit my own Bootstrap templates or themes?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseTen" class="panel-collapse collapse" aria-expanded="false">
+                                <div class="panel-body">
+                                    A lot of the content of the site has been submitted by the community. Whether it is a commercial element/template/theme 
+                                    or a free one, you are encouraged to contribute. All credits are published along with the resources. 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false">What is the currency used for all transactions?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseEleven" class="panel-collapse collapse" aria-expanded="false">
+                                <div class="panel-body">
+                                    All prices for themes, templates and other items, including each seller's or buyer's account balance are in <strong>USD</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Jquery js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+
+    <!-- Bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <!-- pooper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+
+    <!-- USer class -->
+    <script src="./js/main.js"></script>
+    <script src="./js/Database.js"></script>
+    <script src="./js/User.js"></script>
+
+</body>
+
+</html>

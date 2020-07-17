@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="generic-layout">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="generic-logo">
+                            <img src="./assets/img/logo_light.svg" alt="while of force">
+                        </div>
+                        <div class="nav-tools-group">
+                            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                
+                            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                                <button class="navbar-toggler p-0 border-0 offcanvas-collapse_btnClose" type="button" data-toggle="offcanvas">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./register.html">Register</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./warsiepedia.html">Warsiepedia</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./faqs.html">FAQS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="heroSection">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-sm-10">
+                        <div class="heroSection_content">
+                            <figure>
+                                <img src="./assets/img/mobile_mockup.png" alt="">
+                            </figure>
+                            <p class="display-4">¿Crees que lo sabes todo sobre StarWars?</p>
+                            <p class="h2 mt-5 mb-5">Participa en nuestro concurso de paneles de letras y pon a prueba tus conocimientos sobre StarWars.</p>
+                            <div class="heroSection_actions">
+                                <a class="btn btn-secondary btn-lg" href="./register.html" role="button">Regístrate</a>
+                                <a class="btn btn-primary btn-lg" href="./contest.html" role="button">Empieza a concursar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="warsiepediaSection">
+            <div class="container">
+                <div class="row justify-content-md-around">
+                    <div class="col-md-8">
+                        <div class="warsiepediaSection_content">
+                            <div class="warsiepediaSection_title">
+                                <div class="circle">
+                                    <span class="icon-lightsaber"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span></span>
+                                </div>
+                                <h2 class="display-3">Entrena tu mente joven pasawan</h2>
+                            </div>
+                            <p class="h2 mt-3 mb-5">Entra en nuestra warsiepedia de Wheel Of Force y estudia todas las posibles preguntas que te pueden hacer en nuestro concurso</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-lg-center mt-5 warsiepediaSection_categories">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="warsiepediaSection_card">
+                            <div class="warsiepediaSection_card_image card_image--species"></div>
+                            <div class="warsiepediaSection_card_title">  
+                                <a href="./warsiepedia.html?cat=species" class="btn btn-lg">See Species</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="warsiepediaSection_card">
+                            <div class="warsiepediaSection_card_image card_image--spaceships">
+
+                            </div>
+                            <div class="warsiepediaSection_card_title">  
+                                <a href="./warsiepedia.html?cat=starships" class="btn btn-lg">See Spaceships</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="warsiepediaSection_card">
+                            <div class="warsiepediaSection_card_image card_image--planets">
+
+                            </div>
+                            <div class="warsiepediaSection_card_title">  
+                                <a href="./warsiepedia.html?cat=planets" class="btn btn-lg">See Planets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-lg-center">
+                    <div class="col-md-12">
+                        <a class="btn btn-secondary btn-lg" href="./warsiepedia.html" role="button">See all the categories</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Jquery js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+
+    <!-- Bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <!-- pooper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+
+    <!-- USer class -->
+    <script src="./js/main.js"></script>
+    <script src="./js/Database.js"></script>
+    <script src="./js/User.js"></script>
+
+</body>
+
+</html>
